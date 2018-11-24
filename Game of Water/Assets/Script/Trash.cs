@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Trash : MonoBehaviour {
+	float x;
+	float y;
 
-	// Use this for initialization
-	void Start () {
-		
+	public Trash(float x, float y) {
+		this.x = x;
+		this.y = y;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void disappear(){
+		this.gameObject.SetActive(false);
 	}
 }
