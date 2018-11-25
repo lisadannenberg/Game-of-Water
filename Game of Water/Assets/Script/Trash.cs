@@ -2,16 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trash : MonoBehaviour {
+public class Trash : MonoBehaviour
+{
+	public Beach beach;
+	private Rigidbody2D rb2d;
 	float x;
 	float y;
 
-	public Trash(float x, float y) {
-		this.x = x;
-		this.y = y;
+	void Start()
+	{
+		rb2d = GetComponent<Rigidbody2D>();
+		// beach = GameObject.Find("ELU").GetComponent("Beach");
 	}
 
-	public void disappear(){
+	// Update is called once per frame
+	void Update()
+	{
+		//Nothing happens here
+	}
+
+	public void disappear()
+	{
 		this.gameObject.SetActive(false);
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("seagull"))
+		{
+			beach.eatTrash(this);
+			disappear();
+		}
+	}
+
+	void OnMouseDown()
+	{
+		beach.collectTrash(this);
+		disappear();
 	}
 }
