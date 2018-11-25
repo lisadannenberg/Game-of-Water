@@ -7,7 +7,7 @@ public class Beach : MonoBehaviour
 	// Attributes
 	public int counter = 0;
 	public int collectedTrash = 0;
-	public int life = 3;
+	public int life = 5;
 	public List<Trash> trashlist;
 	public List<Trash> unusedTrash;
 	public Seagull seagullRight;
@@ -34,9 +34,9 @@ public class Beach : MonoBehaviour
 		trashlist.Add(rubbish1);
 		trashlist.Add(rubbish2);
 		// Putting the other trash into a seperate list
-		unusedTrash.Add(rubbish3);
-		unusedTrash.Add(rubbish4);
-		unusedTrash.Add(rubbish5);
+	//	unusedTrash.Add(rubbish3);
+	//	unusedTrash.Add(rubbish4);
+	//	unusedTrash.Add(rubbish5);
 		// Set target for seagul
 		seagullLeft.setTarget(rubbish1);
 		seagullRight.setTarget(rubbish2);
@@ -45,13 +45,13 @@ public class Beach : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (life == 0 || collectedTrash == 10)
+		if (life == 0 || collectedTrash == 15)
 		{
 			// Pauses the game
 			Time.timeScale = 0;
 		}
 
-		if ((counter % 20) == 0 && unusedTrash.Count != 0)
+		if ((counter % 20) == 0 && unusedTrash.Count > 0)
 		{
 			float randomX = Random.Range(-13.0f, 13.0f);
 			float randomY = Random.Range(-4.5f, -2.0f);

@@ -28,7 +28,12 @@ public class Trash : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.CompareTag("seagull"))
+		if (other.gameObject.CompareTag("seagull1"))
+		{
+			beach.eatTrash(this);
+			disappear();
+		}
+		else if (other.gameObject.CompareTag("seagull2"))
 		{
 			beach.eatTrash(this);
 			disappear();

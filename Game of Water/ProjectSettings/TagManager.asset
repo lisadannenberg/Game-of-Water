@@ -6,6 +6,8 @@ TagManager:
   tags:
   - seagull
   - trash
+  - seagull1
+  - seagull2
   layers:
   - Default
   - TransparentFX
