@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Seagull : MonoBehaviour
 {
-
-	//private int xcoord = 0;
-	//private int ycoord = 0;
 	private Rigidbody2D rb2d;
 	public Beach beach;
 	private Trash target;
+	public Sprite deadSeagull;
 
 	// Use this for initialization
 	void Start()
@@ -41,14 +40,13 @@ public class Seagull : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("trash"))
 		{
-			//print(other);
-			//print(other.gameObject);
-			//print(other.gameObject.GetComponent<Trash>());
-
-			//beach.eatTrash(other.gameObject.GetComponent<Trash>());
-			//other.gameObject.SetActive(false);
-			//print("test");
 
 		}
+	}
+
+	public void changeSprite()
+	{
+		this.GetComponent<SpriteRenderer>().sprite = deadSeagull;
+
 	}
 }

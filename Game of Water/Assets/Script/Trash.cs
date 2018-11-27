@@ -12,7 +12,6 @@ public class Trash : MonoBehaviour
 	void Start()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
-		// beach = GameObject.Find("ELU").GetComponent("Beach");
 	}
 
 	// Update is called once per frame
