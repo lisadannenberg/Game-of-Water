@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
  * Contains the world/level that controlls the game flow and contains the game elements.
@@ -41,6 +42,9 @@ public class Beach : MonoBehaviour
 	public Text winOrLoseScreen;
 	// Displays the game's goal
 	public Text explaination;
+	// Restarts the game, when clicked
+	public Button restartButton;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -64,6 +68,11 @@ public class Beach : MonoBehaviour
 		seagullRight.setTarget(rubbish2);
 		// Will be activated at the end of the game
 		winOrLoseScreen.gameObject.SetActive(false);
+		// Add event to a button
+		restartButton.onClick.AddListener(TaskOnClick);
+		restartButton.gameObject.SetActive(false);
+		// Time in the scene runs normal
+		Time.timeScale = 1;
 	}
 
 	// Update is called once per frame
@@ -76,20 +85,21 @@ public class Beach : MonoBehaviour
 		seagullLife.text =  playerHealth;
 		collectedTrashText.text = collectedTrashByPlayer;
 
-		if (life == 0 || collectedTrash == 15) 
+		if (life <= 0 || collectedTrash >= 15) 
 		{
 			// Pauses the game
 			Time.timeScale = 0;
 			winOrLoseScreen.gameObject.SetActive(true);
 			// Game is over. Player lost
-			if (life == 0) 
+			if (life <= 0) 
 			{
 				winOrLoseScreen.text = "Sorry,you have lost";
 				seagullLeft.changeSprite();
 				seagullRight.changeSprite();
+				restartButton.gameObject.SetActive(true);
 			}
 			// Player won
-			if(collectedTrash == 15)
+			if(collectedTrash >= 15)
 			{
 				winOrLoseScreen.text = "You saved the seagull's life";
 			}
@@ -152,4 +162,11 @@ public class Beach : MonoBehaviour
 		handleTrash(pTrash);
 		life--;
 	}
+
+	// The task is activated by clicking the restart button. Restarts the game.
+	void TaskOnClick()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
 }
