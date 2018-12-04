@@ -25,13 +25,19 @@ public class Beach : MonoBehaviour
 	public Seagull seagullLeft;
 	// Rubbish attributes contains rubbish and different sprites
 	public Trash rubbish1;
+	// Rubbish attributes contains rubbish and different sprites
 	public Trash rubbish2;
+	// Rubbish attributes contains rubbish and different sprites
 	public Trash rubbish3;
+	// Rubbish attributes contains rubbish and different sprites
 	public Trash rubbish4;
+	// Rubbish attributes contains rubbish and different sprites
 	public Trash rubbish5;
 	// Text field initialization
 	public Text seagullLife;
+	//Displays how much trash is collected by the player so far
 	public Text collectedTrashText;
+	// Displays if the player won or lost.
 	public Text winOrLoseScreen;
 
 	// Use this for initialization
@@ -49,11 +55,12 @@ public class Beach : MonoBehaviour
 		trashlist.Add(rubbish2);
 		// Putting the other trash into a seperate list
 		unusedTrash.Add(rubbish3);
-		//unusedTrash.Add(rubbish4);
-		//unusedTrash.Add(rubbish5);
-		// Set target for seagul
+		unusedTrash.Add(rubbish4);
+		unusedTrash.Add(rubbish5);
+		// Set target for seagul, which it tries to get
 		seagullLeft.setTarget(rubbish1);
 		seagullRight.setTarget(rubbish2);
+		// Will be activated at the end of the game
 		winOrLoseScreen.gameObject.SetActive(false);
 	}
 
@@ -63,6 +70,7 @@ public class Beach : MonoBehaviour
 		// Setting textfields
 		string playerHealth =  "Life : " + life;
 		string collectedTrashByPlayer = "Collected Trash: " + collectedTrash;
+		// Updates the text fields
 		seagullLife.text =  playerHealth;
 		collectedTrashText.text = collectedTrashByPlayer;
 
@@ -84,12 +92,14 @@ public class Beach : MonoBehaviour
 				winOrLoseScreen.text = "You saved the seagull's life";
 			}
 		}
-
+		// Spawns new trash on the map
 		if ((counter % 20) == 0 && unusedTrash.Count > 0)
 		{
+			// Calculates a random spot where the next trash object spawns
 			float randomX = Random.Range(-13.0f, 13.0f);
 			float randomY = Random.Range(-4.5f, -2.0f);
 			Trash tmp = getTrash();
+			// Inserts the new trash object into the currently displayed trash list and removes it from the unused list.
 			trashlist.Add(tmp);
 			unusedTrash.Remove(tmp);
 			tmp.transform.position = new Vector3(randomX, randomY, 0f);
@@ -98,24 +108,38 @@ public class Beach : MonoBehaviour
 		counter++;
 	}
 
+	/*
+	 * Return a random trash object from the unused trash list.
+	 * @return a trash object
+	 * */
 	public Trash getTrash()
 	{
 		int randomNr = Random.Range(0, (unusedTrash.Count - 1));
 		return unusedTrash[randomNr];
 	}
 
+	/*
+	 * Is called whenever trash is collected/eaten. 
+	 * The collected trash is added to a list of unuesed trash.
+	 * */
 	public void handleTrash(Trash pTrash)
 	{
 		trashlist.Remove(pTrash);
 		unusedTrash.Add(pTrash);
 	}
 
+	/*
+	 * Collect a object @pTrash and increase the player's collected trash plus 1. 
+	 * */
 	public void collectTrash(Trash pTrash)
 	{
 		handleTrash(pTrash);
 		collectedTrash++;
 	}
 
+	/*
+	 * Eats a object @param pTrash and decreases the seagull's life minus 1.
+	 **/
 	public void eatTrash(Trash pTrash)
 	{
 		handleTrash(pTrash);
