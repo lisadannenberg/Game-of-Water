@@ -28,7 +28,7 @@ public class Seagull : MonoBehaviour
 	void Update()
 	{
 		//transform.Translate(-0.1f, 0, 0)
-		moveToTarget(1.5f);
+		moveToTarget(1.1f);
 	}
 
 	/*

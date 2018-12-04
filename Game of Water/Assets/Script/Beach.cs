@@ -39,7 +39,8 @@ public class Beach : MonoBehaviour
 	public Text collectedTrashText;
 	// Displays if the player won or lost.
 	public Text winOrLoseScreen;
-
+	// Displays the game's goal
+	public Text explaination;
 	// Use this for initialization
 	void Start()
 	{
@@ -55,8 +56,9 @@ public class Beach : MonoBehaviour
 		trashlist.Add(rubbish2);
 		// Putting the other trash into a seperate list
 		unusedTrash.Add(rubbish3);
-		unusedTrash.Add(rubbish4);
-		unusedTrash.Add(rubbish5);
+		// Trash is commented. Can be used for a harder game
+		//unusedTrash.Add(rubbish4);
+		//unusedTrash.Add(rubbish5);
 		// Set target for seagul, which it tries to get
 		seagullLeft.setTarget(rubbish1);
 		seagullRight.setTarget(rubbish2);
@@ -104,6 +106,11 @@ public class Beach : MonoBehaviour
 			unusedTrash.Remove(tmp);
 			tmp.transform.position = new Vector3(randomX, randomY, 0f);
 			tmp.gameObject.SetActive(true);
+		}
+		// Remove the explaination text from screen after player grabbed some trash
+		if (collectedTrash == 2)
+		{
+			explaination.gameObject.SetActive(false);
 		}
 		counter++;
 	}
