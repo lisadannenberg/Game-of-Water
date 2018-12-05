@@ -8,6 +8,7 @@ TagManager:
   - trash
   - seagull1
   - seagull2
+  - Piece
   layers:
   - Default
   - TransparentFX
