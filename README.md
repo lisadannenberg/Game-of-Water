@@ -3,6 +3,11 @@ Game of Water
 ====
 
 ## Overview
+The Game of Water is a game with different mini-games. It is supposed to teach the player about
+the use of water and about water pollution. After winning a mini-game the player gets an information 
+about waste of water or an information about the pollution of water. The last mini-game is a quiz 
+where the player is supposed to show what he learned while playing the different level.
+
 
 ## Description
 
