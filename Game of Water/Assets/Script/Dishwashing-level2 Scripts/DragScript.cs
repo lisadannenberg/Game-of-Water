@@ -17,14 +17,21 @@ public class DragScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
         if (checkClick == true)
         {
             pickTheDishes = this.gameObject;
             Vector3 vec = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
             pickTheDishes.transform.position = vec;
+            if (pickTheDishes.transform.position.x <= 1 && pickTheDishes.transform.position.y <= 1.6)
+            {
+                if (pickTheDishes.transform.position.x >= -1 && pickTheDishes.transform.position.y >= -5)
+                {
+                    cleanOrNot = true;
+                }
+            }
         }
-        /*if (checkClick == false)
+        if (checkClick == false)
         {
             if (cleanOrNot == true)
             {
@@ -35,11 +42,11 @@ public class DragScript : MonoBehaviour {
             pickTheDishes.transform.position = sendBack;
 
 
-        }*/
+        }
 	}
     public void OnMouseDown()
     {
-        sendBack = Input.mousePosition;
+        sendBack = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
         checkClick = true;
                 
     }

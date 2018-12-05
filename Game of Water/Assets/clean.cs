@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class clean : MonoBehaviour {
 
+    public GameObject[] dishes;
+    public int counter;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,14 +14,21 @@ public class clean : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "dirtydish")
+        counter = 0;
+        for (int x = 0; x < dishes.Length + 1; x++)
         {
-            collision.gameObject.GetComponent<DragScript>().cleanOrNot = true;
-
+            if(dishes[x].GetComponent<DragScript>().cleanOrNot == true)
+            {
+                counter++;
+            }
         }
+        if (counter == dishes.Length)
+        {
+            SceneManager.LoadScene("Level3");
+        }
+	}
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 }
