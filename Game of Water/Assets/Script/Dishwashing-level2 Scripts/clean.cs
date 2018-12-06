@@ -7,8 +7,10 @@ public class clean : MonoBehaviour {
 
     public GameObject[] dishes;
     public int counter;
-	// Use this for initialization
-	void Start () {
+    public GameObject completeLevelUI;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -24,9 +26,16 @@ public class clean : MonoBehaviour {
         }
         if (counter == dishes.Length)
         {
-            SceneManager.LoadScene("Level3");
+            CompleteLevel();
         }
 	}
+
+    public void CompleteLevel()
+    {
+        completeLevelUI.SetActive(true);
+       // SceneManager.LoadScene("Level3");
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
