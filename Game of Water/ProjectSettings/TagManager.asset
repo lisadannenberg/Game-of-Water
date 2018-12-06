@@ -9,6 +9,17 @@ TagManager:
   - seagull1
   - seagull2
   - Piece
+  - dirtydish
+  - Water
+  - ppl
+  - Trash
+  - Spawn
+  - pplSpawn
+  - tap
+  - score
+  - Life1
+  - Life2
+  - Life3
   layers:
   - Default
   - TransparentFX

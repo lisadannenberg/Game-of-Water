@@ -12,7 +12,7 @@ public class DragScript : MonoBehaviour {
     public Sprite cleanDish;
 	// Use this for initialization
 	void Start () {
-		
+        checkClick = false;
 	}
 	
 	// Update is called once per frame
@@ -23,13 +23,7 @@ public class DragScript : MonoBehaviour {
             pickTheDishes = this.gameObject;
             Vector3 vec = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
             pickTheDishes.transform.position = vec;
-            if (pickTheDishes.transform.position.x <= 1 && pickTheDishes.transform.position.y <= 1.6)
-            {
-                if (pickTheDishes.transform.position.x >= -1 && pickTheDishes.transform.position.y >= -5)
-                {
-                    cleanOrNot = true;
-                }
-            }
+            
         }
         if (checkClick == false)
         {
@@ -53,5 +47,12 @@ public class DragScript : MonoBehaviour {
     public void OnMouseUp()
     {
         checkClick = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "tap")
+        {
+            cleanOrNot = true;
+        }
     }
 }
