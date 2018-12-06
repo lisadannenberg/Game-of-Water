@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b272f229bc40bea4997d0e4cf1e55d5c
+  - enabled: 1
+    path: Assets/Scenes/Seagulls-Level1.unity
+    guid: 3a0acf45634a2a64fbfdd94382b60e5b
+  - enabled: 1
+    path: Assets/Scenes/Dishwashing-Level2.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/Connecting pipes.unity
     guid: 277e65ba4e9b48848ab0498af80eb72d
   m_configObjects: {}
