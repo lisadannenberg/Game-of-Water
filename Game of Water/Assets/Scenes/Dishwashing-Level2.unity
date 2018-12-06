@@ -263,7 +263,7 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -3, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: e1ab34520c26adf49986b2cd32956252, type: 3}
 --- !u!1 &307068506
@@ -743,7 +743,7 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -1.5, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: 92bad7d6a76b254409c96a995ef2ffa2, type: 3}
 --- !u!1 &515936378
@@ -932,7 +932,7 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -1.2, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: b037bb56bdfb56a4884055ddb45f6bf1, type: 3}
 --- !u!1 &519420028
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -2, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: 6e72e2a297330334397c27be63dd3ee1, type: 3}
 --- !u!1 &1943296060
@@ -1838,7 +1838,7 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -1, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: e19f4afa59b1d9149a3be4cf54ec095e, type: 3}
 --- !u!1 &2108626745
@@ -2045,6 +2045,6 @@ MonoBehaviour:
   checkClick: 0
   pickTheDishes: {fileID: 0}
   sendBack: {x: 0, y: 0, z: 0}
-  cleaned: {x: 0, y: 0, z: 0}
+  cleaned: {x: -8, y: -2.5, z: 0}
   cleanOrNot: 0
   cleanDish: {fileID: 21300000, guid: 847196dde02fb61458151b516e4bc084, type: 3}
