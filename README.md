@@ -20,6 +20,10 @@ collected trash counts. In  case the player loses the game he/she has the change
 Although, he/she get a notification saying "Sorry, you have lost.". In case the player wins the game he/she
 gets a notification saying: "You saved the seagull´s life.".
 
+### Dishwashing level
+The second level of the game is Dishwashing level. In order to pass this level, player needs to wash all dirty dishes. Player should pick each dirty item and drag it under the tap water. After the item is washed, the game automatically puts the clean dish to the side.  Note: Our initial idea was to add a timer or a water limitation to this level to make it more challenging, but for now it doesn’t have any limitation.
+
+
 
 ## Demo
 
