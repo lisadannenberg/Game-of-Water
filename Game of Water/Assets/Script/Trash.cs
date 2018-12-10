@@ -50,6 +50,7 @@ public class Trash : MonoBehaviour
 		}
 	}
 
+
 	// Removes the object when  the player clicks on the item.
 	void OnMouseDown()
 	{

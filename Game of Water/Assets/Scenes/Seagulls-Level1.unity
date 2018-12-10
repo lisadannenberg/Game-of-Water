@@ -468,6 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2f0e58a1bc7ea4fa5534a98411ef4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beach: {fileID: 297319539}
+  deadSeagull: {fileID: 21300000, guid: 88e8d8b7f46105a428c2f73b88751f1f, type: 3}
 --- !u!50 &477414956
 Rigidbody2D:
   serializedVersion: 4
@@ -538,7 +540,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 88e8d8b7f46105a428c2f73b88751f1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b055943be5938b4488499f31c612f9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1213,6 +1215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2f0e58a1bc7ea4fa5534a98411ef4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beach: {fileID: 297319539}
+  deadSeagull: {fileID: 21300000, guid: 717ff5f0f3c7aff4ab4583ca2eddac66, type: 3}
 --- !u!50 &1108692237
 Rigidbody2D:
   serializedVersion: 4

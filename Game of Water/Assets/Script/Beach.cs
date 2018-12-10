@@ -57,9 +57,9 @@ public class Beach : MonoBehaviour
 		rubbish2.transform.position = new Vector3(-4f, -2.7f, 0f);
 		//Putting the currently displayed trash into a list
 		trashlist.Add(rubbish1);
-		trashlist.Add(rubbish2);
+		//trashlist.Add(rubbish2);
 		// Putting the other trash into a seperate list
-		unusedTrash.Add(rubbish3);
+		//unusedTrash.Add(rubbish3);
 		// Trash is commented. Can be used for a harder game
 		//unusedTrash.Add(rubbish4);
 		//unusedTrash.Add(rubbish5);
@@ -90,13 +90,13 @@ public class Beach : MonoBehaviour
 			// Pauses the game
 			Time.timeScale = 0;
 			winOrLoseScreen.gameObject.SetActive(true);
+			restartButton.gameObject.SetActive(true);
 			// Game is over. Player lost
 			if (life <= 0) 
 			{
 				winOrLoseScreen.text = "Sorry,you have lost";
 				seagullLeft.changeSprite();
 				seagullRight.changeSprite();
-				restartButton.gameObject.SetActive(true);
 			}
 			// Player won
 			if(collectedTrash >= 15)
@@ -108,13 +108,14 @@ public class Beach : MonoBehaviour
 		if ((counter % 20) == 0 && unusedTrash.Count > 0)
 		{
 			// Calculates a random spot where the next trash object spawns
-			float randomX = Random.Range(-13.0f, 13.0f);
+			float randomX = Random.Range(-11.0f, 11.0f);
 			float randomY = Random.Range(-4.5f, -2.0f);
 			Trash tmp = getTrash();
 			// Inserts the new trash object into the currently displayed trash list and removes it from the unused list.
 			trashlist.Add(tmp);
 			unusedTrash.Remove(tmp);
 			tmp.transform.position = new Vector3(randomX, randomY, 0f);
+			placeTrash(tmp);
 			tmp.gameObject.SetActive(true);
 		}
 		// Remove the explaination text from screen after player grabbed some trash
@@ -169,4 +170,40 @@ public class Beach : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
+	// Let the trash not spawn immediately in front of a seagull
+	void placeTrash(Trash pTrash)
+	{
+		// The position of the seagulls
+		float seagull1 = Mathf.Abs(seagullLeft.transform.position.x);
+		float seagull2 = Mathf.Abs(seagullRight.transform.position.x);
+		// Try it six times
+		for (int i = 1; i < 7; i++)
+		{
+			// The position of the trash
+			float trashToPlace = Mathf.Abs(pTrash.transform.position.x);
+			// The distance between the trash and seagulls
+			float distanceTrashSea1 = Mathf.Abs(seagull1 - trashToPlace);
+			float distanceTrashSea2 = Mathf.Abs(seagull2 - trashToPlace);
+			// If the distance is less 2.5f, then move the trash
+			if (distanceTrashSea1 <= 3.5f || distanceTrashSea2 <= 3.5f)
+			{
+				// Check if the trash is in the left side of the game field
+				if (trashToPlace <= 0.0f)
+				{
+					// Move the trash to the right
+					pTrash.transform.position = new Vector3(trashToPlace + 1f , pTrash.transform.position.y, 0.0f);
+				}
+				else 
+				{
+					// Move the trash to the left
+					pTrash.transform.position = new Vector3(trashToPlace - 1f , pTrash.transform.position.y, 0.0f);
+				}
+			}
+			else
+			{
+				// You are out of reach of the seagulls, so leave the for-loop
+				break;
+			}
+		}
+	}
 }
