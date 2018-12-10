@@ -1,5 +1,4 @@
 ﻿
-
 Game of Water
 ====
 
@@ -8,6 +7,9 @@ The Game of Water is a game with different mini-games. It is supposed to teach t
 the use of water and about water pollution. After winning a mini-game the player gets an information 
 about waste of water or an information about the pollution of water. The last mini-game is a quiz 
 where the player is supposed to show what he learned while playing the different level.
+
+
+## Description
 
 ### Seagull level
 The seagull level is a level where the player has to collect the random spawned trash at the beach.
@@ -25,8 +27,20 @@ The second level of the game is Dishwashing level. In order to pass this level, 
 
 Connecting pipes level is classical puzzle game, Where at first the player will have to give the the levels grid dimensions. On every tile of the grid a pipe or a water valve is generated and the game idea is to connect all the water valves to each other by rotating the pipes around.
 
+
+## Demo
+
+## VS. 
+
+## Requirement
+
+## Usage
+
+## Install
+
+## Contribution
+
 ## Licence
-Creative Commons BY-NC-SA 4.0
 
 ## Author
 Tamar Zarkua 
@@ -42,4 +56,3 @@ Lauri Niilo
 Lisa Dannenberg 
 
 ```
-
