@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Connecting pipes.unity
     guid: 277e65ba4e9b48848ab0498af80eb72d
+  - enabled: 1
+    path: Assets/Scenes/Cafe.unity
+    guid: ff5ba00e495610e4fa4d89d4dd48261c
   m_configObjects: {}

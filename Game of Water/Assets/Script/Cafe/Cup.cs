@@ -53,8 +53,11 @@ public class Cup : MonoBehaviour {
             Destroy(this.gameObject);
             Destroy(findPerson[0]);
             //GameObject bot = bottles[Random.Range(0, 5)];     
-            int y = Random.Range(0, 5);
+            int y = Random.Range(0, 5);            
             Instantiate(bottles[y], bottleSpawn[0].transform.position, bottles[y].transform.rotation);
+            bottles[y].gameObject.GetComponent<Cup>().enabled = true;
+            bottles[y].gameObject.GetComponent<DragScript>().enabled = true;
+            bottles[y].gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             GameObject[] person = GameObject.FindGameObjectsWithTag("ppl");
             
 

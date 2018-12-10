@@ -21,6 +21,22 @@ public class UI : MonoBehaviour {
             currentScene = SceneManager.GetActiveScene().buildIndex;
         }
     }
+    public void level1()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void level2()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void level3()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void level4()
+    {
+        SceneManager.LoadScene(4);
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);

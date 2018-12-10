@@ -1768,14 +1768,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223356878273556334, guid: ebaa9aa1a58c7f346879f5c9708d27c3,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 1168897978638872, guid: ebaa9aa1a58c7f346879f5c9708d27c3, type: 2}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 223356878273556334, guid: ebaa9aa1a58c7f346879f5c9708d27c3,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 106
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebaa9aa1a58c7f346879f5c9708d27c3, type: 2}

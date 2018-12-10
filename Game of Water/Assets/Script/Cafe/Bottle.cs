@@ -31,8 +31,7 @@ public class Bottle : MonoBehaviour {
             if (lifeCounter < life.Length)
             {
                 lifeCounter++;
-            }
-            
+            }            
         }
     }
    
