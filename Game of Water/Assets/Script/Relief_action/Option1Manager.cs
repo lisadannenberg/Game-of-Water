@@ -126,7 +126,7 @@ public class Option1Manager : MonoBehaviour
 
             stateChange(current_quetion);
 
-        } else
+        } else if(point == 3)
         {
             discText.text = "Nice! You can play again!";
             Invoke("SceneChang", 4);
