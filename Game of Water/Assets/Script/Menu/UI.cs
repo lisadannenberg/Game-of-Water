@@ -24,18 +24,27 @@ public class UI : MonoBehaviour {
     public void level1()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     public void level2()
     {
         SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
     public void level3()
     {
         SceneManager.LoadScene(3);
+        Time.timeScale = 1;
     }
     public void level4()
     {
         SceneManager.LoadScene(4);
+        Time.timeScale = 1;
+    }
+    public void level5()
+    {
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1;
     }
     public void StartGame()
     {
