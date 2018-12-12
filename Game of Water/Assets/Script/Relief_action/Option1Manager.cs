@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Option1Manager : MonoBehaviour
 {
@@ -128,6 +129,7 @@ public class Option1Manager : MonoBehaviour
         } else
         {
             discText.text = "Nice! You can play again!";
+            Invoke("SceneChang", 4);
         }
     }
     // change the current_question
@@ -178,9 +180,13 @@ public class Option1Manager : MonoBehaviour
             // if(i = )
 
         }
-
     }
-   
+
+    private void SceneChang()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 
 
 }
